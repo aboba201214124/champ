@@ -8,7 +8,13 @@
     <title>Document</title>
 </head>
 <body>
-
-
+    <form action="{{route ('authentication')}}" method="post" >
+        @csrf
+        <label for="">email</label>
+        <input type="text" name="email" id="email">
+        <label>Пароль</label>
+        <input type="text" name="password" id="password">
+        <button type="submit">Войти</button>
+    </form>
 </body>
 </html>

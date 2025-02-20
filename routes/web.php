@@ -1,13 +1,17 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 
-Route::get('/', function () {
-    return view('main');
-});
+Route::get('/', [AuthController::class, 'index'])->name('auth.index');
 
+Route::get('/auth/registration', [AuthController::class, 'reg'])->name('auth.reg');
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::post('/auth/login', [AuthController::class, 'authentication'])->name('authentication');
+Route::post('/auth/registration', [AuthController::class, 'register'])->name('register');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 Route::get('/product', [ProductsController::class, 'index'])->name('product.index');
 

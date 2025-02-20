@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use app\Http\Controllers\request\FilterRequest;
+use App\Http\Controllers\request\FilterRequest;
 use App\Models\Category;
 use App\Models\product;
 use Illuminate\Http\Request;
@@ -18,6 +18,7 @@ class ProductsController
             'categories'=>$categories,
         ]);
     }
+
     public function filter(FilterRequest $request){
         $data = $request->validated();
 
