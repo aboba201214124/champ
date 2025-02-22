@@ -10,6 +10,7 @@
 <body>
 <h1>Категории</h1>
 <a href='{{route('category.create')}}'>Добавить</a>
+<a href="{{route('auth.index')}}">Вернуться</a>
 <table>
     <tr>
         <td>№</td>

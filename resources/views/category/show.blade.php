@@ -9,6 +9,6 @@
 </head>
 <body>
     <div>{{$category->id}}. {{$category->name}}</div>
-    <a href="{{route("category.index")}}">Back</a>
+    <a href="{{route("category.index")}}">Вернуться</a>
 </body>
 </html>

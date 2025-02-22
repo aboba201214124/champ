@@ -9,6 +9,7 @@
 </head>
 <body>
 <h1>Изменить категорию</h1>
+<a href="{{route('category.index')}}">Вернуться</a>
     <form action="{{route('category.update', $category->id)}}" method="post">
         @csrf
         @method('patch')

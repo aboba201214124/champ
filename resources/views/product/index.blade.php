@@ -10,6 +10,7 @@
 <body>
 <h1>Товары</h1>
 <a href='{{route('product.create')}}' >Добавить</a>
+<a href="{{route('auth.index')}}">Вернуться</a>
 <form>
     <select name="category_id" id="">
         <option value="all">Все</option>

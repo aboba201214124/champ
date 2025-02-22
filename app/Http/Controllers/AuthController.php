@@ -5,6 +5,7 @@ namespace app\Http\Controllers;
 use App\Models\Category;
 use App\Models\product;
 use App\Models\User;
+use App\Queries\ProductQuery;
 use App\Models\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -20,15 +21,7 @@ class AuthController
             'categories'=>$categories,
         ]);
     }
-    public function filter(FilterRequest $request){
-        $data = $request->validated();
 
-        $query = product::query();
-        if(isset($data['category_id'])){
-            $query->where('category_id',$data['category_id']);
-        }
-        $product = $query->get();
-    }
     public function login(){
         return view('auth.login');
     }
@@ -49,6 +42,12 @@ class AuthController
     }
     public function logout(Request $request){
         Auth::logout();
-        return view('auth.index');
+        $products = product::filter($request);
+        $categories = Category::all();
+        return view('auth.index',[
+            'products'=>$products,
+        ],[
+            'categories'=>$categories,
+        ]);
     }
 }

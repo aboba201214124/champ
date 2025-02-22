@@ -16,6 +16,9 @@
     <a href='{{route('auth.login')}}' >Войти</a>
     <a href='{{route('auth.reg')}}' >Зарегистрироваться</a>
     @endauth
-
+    @foreach($products as $product)
+        <h2>{{$product->name}}</h2>
+        <p>{{$product->price}}</p>
+    @endforeach
 </body>
 </html>

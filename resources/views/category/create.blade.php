@@ -9,6 +9,7 @@
 </head>
 <body>
     <h1>Создать категорию</h1>
+    <a href="{{route('category.index')}}">Вернуться</a>
     <form action="{{route('category.store')}}" method="post">
         @csrf
         <label for="name">Название</label>

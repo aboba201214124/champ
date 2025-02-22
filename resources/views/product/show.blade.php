@@ -12,7 +12,7 @@
     <div>{{$product->id}}. {{$product->name}}</div>
     <div>{{$product->price}} рублей</div>
     <td>Категория:{{$product->category->name}}</td>
-    <a href="{{route("product.index")}}">Back</a>
+    <a href="{{route("product.index")}}">Вернуться</a>
 </div>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="{{route('product.index')}}">Вернуться</a>
 <form action="{{route('product.update',$product->id) }}" method="post">
     @csrf
     @method('patch')

@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+<a href="{{route('product.index')}}">Вернуться</a>
 <form action="{{route('product.store')}}" method="post">
     @csrf
     <label for="name">Название</label>
